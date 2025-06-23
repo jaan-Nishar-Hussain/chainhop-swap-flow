@@ -28,23 +28,23 @@ const WalletConnect = ({ isConnected, onConnectionChange }: WalletConnectProps) 
 
   if (isConnected) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-gray-900 font-semibold">Wallet Connected</h3>
+          <h3 className="text-white font-semibold">Wallet Connected</h3>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
         <div className="space-y-3">
           <div className="flex justify-between text-sm">
-            <span className="text-gray-500">Address</span>
-            <span className="text-gray-900">0x1234...5678</span>
+            <span className="text-gray-400">Address</span>
+            <span className="text-white">0x1234...5678</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-gray-500">Network</span>
-            <span className="text-gray-900">Sepolia</span>
+            <span className="text-gray-400">Network</span>
+            <span className="text-white">Sepolia</span>
           </div>
           <button
             onClick={handleDisconnect}
-            className="w-full bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 py-2 rounded-lg transition-all duration-200"
+            className="w-full bg-red-600 hover:bg-red-700 border border-red-500 text-white py-2 rounded-lg transition-all duration-200"
           >
             Disconnect
           </button>
@@ -54,12 +54,12 @@ const WalletConnect = ({ isConnected, onConnectionChange }: WalletConnectProps) 
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-      <h3 className="text-gray-900 font-semibold mb-4">Connect Wallet</h3>
+    <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-sm">
+      <h3 className="text-white font-semibold mb-4">Connect Wallet</h3>
       <div className="relative">
         <button
           onClick={() => setShowWallets(!showWallets)}
-          className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2"
+          className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2"
         >
           <Wallet className="w-5 h-5" />
           <span>Connect Wallet</span>
@@ -67,15 +67,15 @@ const WalletConnect = ({ isConnected, onConnectionChange }: WalletConnectProps) 
         </button>
 
         {showWallets && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg overflow-hidden z-50 shadow-lg">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-gray-700 border border-gray-600 rounded-lg overflow-hidden z-50 shadow-lg">
             {wallets.map((wallet) => (
               <button
                 key={wallet.name}
                 onClick={() => handleConnect(wallet.name)}
-                className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-all duration-200 flex items-center space-x-3"
+                className="w-full px-4 py-3 text-left hover:bg-gray-600 transition-all duration-200 flex items-center space-x-3"
               >
                 <span className="text-2xl">{wallet.icon}</span>
-                <span className="text-gray-900">{wallet.name}</span>
+                <span className="text-white">{wallet.name}</span>
               </button>
             ))}
           </div>

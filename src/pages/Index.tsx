@@ -27,7 +27,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-900">
       <Navigation 
         activeTab={activeTab} 
         setActiveTab={setActiveTab}
@@ -37,7 +37,7 @@ const Index = () => {
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="flex-1">
-            <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 shadow-sm">
               {renderActiveComponent()}
             </div>
           </div>
@@ -48,20 +48,20 @@ const Index = () => {
               onConnectionChange={setIsWalletConnected}
             />
             
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <h3 className="text-gray-900 font-semibold mb-4">Market Overview</h3>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-sm">
+              <h3 className="text-white font-semibold mb-4">Market Overview</h3>
               <div className="space-y-3">
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">24h Volume</span>
-                  <span className="text-gray-900 font-medium">$2.4M</span>
+                  <span className="text-gray-400">24h Volume</span>
+                  <span className="text-white font-medium">$2.4M</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Total Liquidity</span>
-                  <span className="text-gray-900 font-medium">$12.8M</span>
+                  <span className="text-gray-400">Total Liquidity</span>
+                  <span className="text-white font-medium">$12.8M</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Active Pairs</span>
-                  <span className="text-gray-900 font-medium">156</span>
+                  <span className="text-gray-400">Active Pairs</span>
+                  <span className="text-white font-medium">156</span>
                 </div>
               </div>
             </div>

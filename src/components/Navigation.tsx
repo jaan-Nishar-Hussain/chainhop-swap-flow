@@ -16,14 +16,14 @@ const Navigation = ({ activeTab, setActiveTab, isWalletConnected }: NavigationPr
   ];
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-sm">
+    <nav className="bg-gray-800 border-b border-gray-700 shadow-sm">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-black rounded flex items-center justify-center font-bold text-white text-sm">
+            <div className="w-8 h-8 bg-purple-600 rounded flex items-center justify-center font-bold text-white text-sm">
               X
             </div>
-            <span className="text-gray-900 text-xl font-bold">CrossDEX</span>
+            <span className="text-white text-xl font-bold">CrossDEX</span>
           </div>
 
           <div className="flex items-center space-x-2">
@@ -33,8 +33,8 @@ const Navigation = ({ activeTab, setActiveTab, isWalletConnected }: NavigationPr
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2 rounded-md transition-all duration-200 flex items-center space-x-2 font-medium ${
                   activeTab === tab.id
-                    ? 'bg-black text-white'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-purple-600 text-white'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-700'
                 }`}
               >
                 <tab.icon className="w-4 h-4" />
@@ -46,7 +46,7 @@ const Navigation = ({ activeTab, setActiveTab, isWalletConnected }: NavigationPr
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-sm text-gray-500">Sepolia & Amoy</span>
+              <span className="text-sm text-gray-400">Sepolia & Amoy</span>
             </div>
           </div>
         </div>
