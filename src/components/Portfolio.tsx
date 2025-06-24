@@ -9,31 +9,31 @@ const Portfolio = () => {
   ]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-white">Portfolio</h2>
+        <h2 className="text-3xl font-bold text-black">Portfolio</h2>
         <div className="text-right">
-          <div className="text-2xl font-bold text-white">$30,399</div>
-          <div className="text-sm text-green-400">+$1,247 (4.3%)</div>
+          <div className="text-3xl font-bold text-black">$30,399</div>
+          <div className="text-sm text-gray-600">+$1,247 (4.3%)</div>
         </div>
       </div>
 
       <div className="space-y-4">
         {portfolioData.map((asset) => (
-          <div key={asset.token} className="bg-white/5 border border-white/10 rounded-2xl p-4">
+          <div key={asset.token} className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">{asset.token}</span>
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">{asset.token.charAt(0)}</span>
                 </div>
                 <div>
-                  <div className="text-white font-semibold">{asset.token}</div>
-                  <div className="text-gray-400 text-sm">{asset.balance} {asset.token}</div>
+                  <div className="text-black font-bold text-xl">{asset.token}</div>
+                  <div className="text-gray-600 text-sm">{asset.balance} {asset.token}</div>
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-white font-semibold">{asset.value}</div>
-                <div className={`text-sm ${asset.change.startsWith('+') ? 'text-green-400' : 'text-red-400'}`}>
+                <div className="text-black font-bold text-xl">{asset.value}</div>
+                <div className={`text-sm font-medium ${asset.change.startsWith('+') ? 'text-gray-700' : 'text-gray-500'}`}>
                   {asset.change}
                 </div>
               </div>
@@ -42,22 +42,22 @@ const Portfolio = () => {
         ))}
       </div>
 
-      <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-        <h3 className="text-white font-semibold mb-4">Recent Transactions</h3>
-        <div className="space-y-3">
-          <div className="flex justify-between items-center">
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
+        <h3 className="text-black font-bold text-xl mb-6">Recent Transactions</h3>
+        <div className="space-y-4">
+          <div className="flex justify-between items-center p-4 rounded-lg hover:bg-gray-100 transition-all duration-200">
             <div>
-              <div className="text-white text-sm">Swap ETH → USDC</div>
-              <div className="text-gray-400 text-xs">2 hours ago</div>
+              <div className="text-black text-sm font-medium">Swap ETH → USDC</div>
+              <div className="text-gray-600 text-xs">2 hours ago</div>
             </div>
-            <div className="text-green-400 text-sm">+1,247 USDC</div>
+            <div className="text-black text-sm font-semibold">+1,247 USDC</div>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center p-4 rounded-lg hover:bg-gray-100 transition-all duration-200">
             <div>
-              <div className="text-white text-sm">Add Liquidity ETH/USDC</div>
-              <div className="text-gray-400 text-xs">1 day ago</div>
+              <div className="text-black text-sm font-medium">Add Liquidity ETH/USDC</div>
+              <div className="text-gray-600 text-xs">1 day ago</div>
             </div>
-            <div className="text-blue-400 text-sm">+24.78 LP</div>
+            <div className="text-black text-sm font-semibold">+24.78 LP</div>
           </div>
         </div>
       </div>

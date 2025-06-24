@@ -17,104 +17,106 @@ const CrossChainSwap = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-white">Cross-Chain Swap</h2>
-        <div className="flex items-center space-x-2 bg-orange-500/20 border border-orange-500/30 rounded-lg px-3 py-1">
-          <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-          <span className="text-sm text-orange-300">Bridge Active</span>
+        <h2 className="text-3xl font-bold text-black">
+          Cross-Chain Swap
+        </h2>
+        <div className="flex items-center space-x-3 bg-gray-100 border border-gray-300 rounded-xl px-4 py-2">
+          <div className="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+          <span className="text-sm text-black font-medium">Bridge Active</span>
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-6">
         {/* From Chain & Token */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-          <div className="flex justify-between items-center mb-3">
-            <span className="text-sm text-gray-400">From</span>
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300">
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-sm text-gray-600 font-medium">From</span>
             <ChainSelector chain={fromChain} onChainSelect={setFromChain} />
           </div>
-          <div className="flex justify-between items-center mb-2">
+          <div className="flex justify-between items-center mb-4">
             <span className="text-xs text-gray-500">Balance: 5.24 ETH</span>
             <span className="text-xs text-gray-500">Network: Sepolia</span>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <input
               type="text"
               value={fromAmount}
               onChange={(e) => setFromAmount(e.target.value)}
               placeholder="0.0"
-              className="bg-transparent text-white text-2xl font-semibold flex-1 outline-none"
+              className="bg-transparent text-black text-3xl font-bold flex-1 outline-none placeholder-gray-400"
             />
             <TokenSelector token={fromToken} onTokenSelect={setFromToken} />
           </div>
-          <div className="mt-2 text-sm text-gray-400">≈ $1,247.30</div>
+          <div className="mt-4 text-sm text-gray-600">≈ <span className="text-gray-800 font-semibold">$1,247.30</span></div>
         </div>
 
         {/* Bridge Arrow */}
         <div className="flex justify-center">
-          <div className="bg-gradient-to-r from-orange-500 to-pink-500 rounded-full p-4 shadow-lg">
+          <button className="bg-black hover:bg-gray-800 border-4 border-white rounded-xl p-4 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
             <ArrowRight className="w-6 h-6 text-white" />
-          </div>
+          </button>
         </div>
 
         {/* To Chain & Token */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-          <div className="flex justify-between items-center mb-3">
-            <span className="text-sm text-gray-400">To</span>
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300">
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-sm text-gray-600 font-medium">To</span>
             <ChainSelector chain={toChain} onChainSelect={setToChain} />
           </div>
-          <div className="flex justify-between items-center mb-2">
+          <div className="flex justify-between items-center mb-4">
             <span className="text-xs text-gray-500">Balance: 847.23 MATIC</span>
             <span className="text-xs text-gray-500">Network: Amoy</span>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <input
               type="text"
               value={toAmount}
               onChange={(e) => setToAmount(e.target.value)}
               placeholder="0.0"
-              className="bg-transparent text-white text-2xl font-semibold flex-1 outline-none"
+              className="bg-transparent text-black text-3xl font-bold flex-1 outline-none placeholder-gray-400"
             />
             <TokenSelector token={toToken} onTokenSelect={setToToken} />
           </div>
-          <div className="mt-2 text-sm text-gray-400">≈ $1,231.45</div>
+          <div className="mt-4 text-sm text-gray-600">≈ <span className="text-gray-800 font-semibold">$1,231.45</span></div>
         </div>
       </div>
 
       {/* Bridge Details */}
-      <div className="bg-white/5 border border-white/10 rounded-xl p-4 space-y-3">
-        <div className="flex justify-between text-sm">
-          <span className="text-gray-400">Bridge Time</span>
-          <span className="text-white">~3-5 minutes</span>
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 space-y-4">
+        <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-100 transition-all duration-200">
+          <span className="text-gray-600 text-sm">Bridge Time</span>
+          <span className="text-black font-semibold">~3-5 minutes</span>
         </div>
-        <div className="flex justify-between text-sm">
-          <span className="text-gray-400">Bridge Fee</span>
-          <span className="text-white">0.1% + Gas</span>
+        <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-100 transition-all duration-200">
+          <span className="text-gray-600 text-sm">Bridge Fee</span>
+          <span className="text-black font-semibold">0.1% + Gas</span>
         </div>
-        <div className="flex justify-between text-sm">
-          <span className="text-gray-400">Gas (Sepolia)</span>
-          <span className="text-white">~$2.45</span>
+        <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-100 transition-all duration-200">
+          <span className="text-gray-600 text-sm">Gas (Sepolia)</span>
+          <span className="text-black font-semibold">~$2.45</span>
         </div>
-        <div className="flex justify-between text-sm">
-          <span className="text-gray-400">Gas (Amoy)</span>
-          <span className="text-white">~$0.01</span>
+        <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-100 transition-all duration-200">
+          <span className="text-gray-600 text-sm">Gas (Amoy)</span>
+          <span className="text-black font-semibold">~$0.01</span>
         </div>
-        <div className="border-t border-white/10 pt-2">
-          <div className="flex justify-between text-sm font-medium">
-            <span className="text-gray-400">Total Cost</span>
-            <span className="text-white">~$3.70</span>
+        <div className="border-t border-gray-300 pt-4">
+          <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-100 transition-all duration-200">
+            <span className="text-gray-600 text-sm font-medium">Total Cost</span>
+            <span className="text-black font-bold">~$3.70</span>
           </div>
         </div>
       </div>
 
-      <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4">
-        <div className="flex items-start space-x-3">
-          <div className="w-5 h-5 bg-yellow-500 rounded-full flex items-center justify-center mt-0.5">
-            <span className="text-xs text-black font-bold">!</span>
+      <div className="bg-gray-100 border border-gray-300 rounded-xl p-6">
+        <div className="flex items-start space-x-4">
+          <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center mt-1">
+            <span className="text-xs text-white font-bold">!</span>
           </div>
           <div>
-            <p className="text-yellow-300 text-sm font-medium">Cross-Chain Bridge Notice</p>
-            <p className="text-yellow-200 text-xs mt-1">
+            <p className="text-black text-sm font-bold mb-2">Cross-Chain Bridge Notice</p>
+            <p className="text-gray-600 text-sm leading-relaxed">
               Cross-chain transactions may take 3-5 minutes to complete. Your funds will be securely bridged between networks.
             </p>
           </div>
@@ -123,7 +125,7 @@ const CrossChainSwap = () => {
 
       <button
         onClick={handleCrossChainSwap}
-        className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-semibold py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
+        className="w-full bg-black hover:bg-gray-800 text-white font-bold py-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-lg"
       >
         Start Cross-Chain Swap
       </button>
